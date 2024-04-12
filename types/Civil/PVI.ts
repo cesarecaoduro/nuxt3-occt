@@ -1,0 +1,3 @@
+interface PVI extends EntityCivilVertical{
+
+}

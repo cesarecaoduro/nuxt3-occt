@@ -136,7 +136,6 @@ mainBuild:
     - symbol: GC_MakeArcOfCircle
     - symbol: GC_MakeArcOfEllipse
     - symbol: GC_Root
-    - symbol: GCPnts
     - symbol: GCPnts_TangentialDeflection
     - symbol: GCPnts_AbscissaPoint
     - symbol: BRepMesh_IncrementalMesh

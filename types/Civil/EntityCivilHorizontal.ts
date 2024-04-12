@@ -1,2 +1,0 @@
-interface EntityCivilHorizontal extends EntityCivil{
-}

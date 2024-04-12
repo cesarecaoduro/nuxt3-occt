@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Handle_Geom_Curve, OpenCascadeInstance } from "~/opencascade/occt";
+import type { OpenCascadeInstance } from "~/opencascade/occt";
 
 const props = defineProps({
   occt: {
@@ -7,8 +7,8 @@ const props = defineProps({
     required: true,
   }
 });
+
 const oc = props.occt as OpenCascadeInstance;
-const al = props.alignment as Alignment;
 const geometryUtils = new GeometryUtils(oc);
 
 var pt1 = new oc.gp_Pnt_3(0,0,0);
@@ -34,8 +34,8 @@ wireBuilder.Add_1(edge2);
 console.log(`Wire is done: ${wireBuilder.IsDone()}`);
 
 var adaptor = new oc.BRepAdaptor_CompCurve_2(wireBuilder.Wire(), false);
-var length = adaptor.LastParameter();
-console.log(`Adaptor last parameter: ${length}`);
+var length = oc.GCPnts_AbscissaPoint.Length_1(adaptor);
+console.log(`Curve length: ${length}`);
 
 
 </script>

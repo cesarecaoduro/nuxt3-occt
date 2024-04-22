@@ -10,6 +10,7 @@
 
 <script setup lang="ts">
 
+// Initialize OpenCascade Kernel
 const { InitiOC } = await useOpenCascade();
 const loading = ref(true);
 
@@ -24,3 +25,25 @@ onMounted(async () => {
   loading.value = false;
 });
 </script>
+
+<style scoped>
+html,
+body
+{
+    overflow: hidden;
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+</style>

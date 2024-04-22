@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/ui-pro": "^1.1.0",
     "@pinia/nuxt": "^0.5.1",
     "nuxt": "^3.11.2",
     "opencascade.js": "2.0.0-beta.b5ff984",

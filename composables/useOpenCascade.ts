@@ -7,11 +7,11 @@ export async function useOpenCascade() {
 
         const {occt} = storeToRefs(useGlobalStore())
         console.log('Loading OpenCascade.js...');
-        const occtfromWasm = await opencascade({
+        const occtWasm = await opencascade({
             locateFile: () => opencascadeWasm,
         });
 
-        occt.value = occtfromWasm;
+        occt.value = occtWasm;
 
         console.log('Loaded OpenCascade.js!');
     }

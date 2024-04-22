@@ -1,3 +1,4 @@
+import { client } from 'process';
 import {
   AmbientLight,
   Color,
@@ -16,6 +17,7 @@ export const useThree = () => {
 
   const {threeScene} = storeToRefs(useGlobalStore())
   var scene: Scene = threeScene.value as Scene;
+  var canvas: HTMLCanvasElement;
 
   const sizes = {
     width: window.innerWidth,
@@ -25,10 +27,9 @@ export const useThree = () => {
   function initThree(canvasId: string) {
 
     window.addEventListener('resize', () => {
-      // Update sizes
+      // // Update sizes
       sizes.width = window.innerWidth
       sizes.height = window.innerHeight
-
       // Update camera
       camera.aspect = sizes.width / sizes.height;
       camera.updateProjectionMatrix();
@@ -38,7 +39,8 @@ export const useThree = () => {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     })
 
-    const canvas = document.getElementById(canvasId)! as HTMLCanvasElement;
+    canvas = document.getElementById(canvasId)! as HTMLCanvasElement;
+  
     scene = new Scene();
     scene.background = new Color('#666');
 

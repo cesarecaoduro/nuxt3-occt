@@ -1,12 +1,10 @@
 <template>
-  <NuxtLayout>
-    <VApp>
-      <div v-if="loading">Loading OpenCascadeInstance...</div>
-      <div v-else>
-        <NuxtPage />
-      </div>
-    </VApp>
-  </NuxtLayout>
+  <VApp id="inspire">
+    <div v-if="loading">Loading OpenCascadeInstance...</div>
+    <div v-else>
+      <NuxtPage />
+    </div>
+  </VApp>
 </template>
 
 <script setup lang="ts">
@@ -26,7 +24,7 @@ onMounted(async () => {
 });
 </script>
 
-<style>
+<style scoped>
 html,
 body {
   overflow: hidden;
@@ -37,5 +35,10 @@ body {
   padding: 0;
 }
 
-
+/* .mountId {
+  position: fixed;
+  top: 0;
+  left: 0;
+  outline: none;
+} */
 </style>

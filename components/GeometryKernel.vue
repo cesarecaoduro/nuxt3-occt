@@ -1,14 +1,19 @@
 <script setup lang="ts">
 import type { OpenCascadeInstance } from "~/opencascade/occt";
 
-const props = defineProps({
-  occt: {
-    type: Object as PropType<OpenCascadeInstance>,
-    required: true,
-  }
-});
+// const store = useGlobalStore();
+const {occt} = storeToRefs(useGlobalStore());
+const oc = occt.value as OpenCascadeInstance;
 
-const oc = props.occt as OpenCascadeInstance;
+
+// const props = defineProps({
+//   occt: {
+//     type: Object as PropType<OpenCascadeInstance>,
+//     required: true,
+//   }
+// });
+
+// const oc = props.occt as OpenCascadeInstance;
 const geometryUtils = new GeometryUtils(oc);
 
 var pt1 = new oc.gp_Pnt_3(0,0,0);
@@ -41,5 +46,5 @@ console.log(`Curve length: ${length}`);
 </script>
 
 <template>
-  <h1>Welcome to OpenCascade Kernel</h1>
+  <h1>Welcome to OpenCascade Kernel</h1>  
 </template>

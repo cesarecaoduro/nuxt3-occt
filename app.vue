@@ -1,15 +1,15 @@
 <template>
-  <div v-if="loading">Loading OpenCascadeInstance...</div>
-  <div v-else>
-    <GeometryKernel/>
-  </div>
-  <div>
-    
-  </div>
+  <NuxtLayout>
+    <VApp>
+      <div v-if="loading">Loading OpenCascadeInstance...</div>
+      <div v-else>
+        <NuxtPage />
+      </div>
+    </VApp>
+  </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-
 // Initialize OpenCascade Kernel
 const { InitiOC } = await useOpenCascade();
 const loading = ref(true);
@@ -26,24 +26,16 @@ onMounted(async () => {
 });
 </script>
 
-<style scoped>
+<style>
 html,
-body
-{
-    overflow: hidden;
+body {
+  overflow: hidden;
 }
 
-*
-{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.webgl
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    outline: none;
-}
+
 </style>

@@ -81,5 +81,5 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <canvas id="mountId" width="700" height="500" class="m-auto rounded-md" />
+  <canvas id="mountId" width="700" height="500" class="webgl m-auto rounded-md" />
 </template>

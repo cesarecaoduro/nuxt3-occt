@@ -1,5 +1,5 @@
 <template>
-  <VNavigationDrawer>
+  <!-- <VNavigationDrawer>
     <VListItem title="Geometry Kernel" subtitle="Powered by OpenCascade" />
     <VDivider></VDivider>
   </VNavigationDrawer>
@@ -9,8 +9,9 @@
         <VBtn density="compact" icon="mdi-plus"></VBtn>
       </VCol>
     </VRow>
-  </VNavigationDrawer>
-  <GeometryKernel />
+  </VNavigationDrawer> -->
+  <!-- <GeometryKernel /> -->
+  <OBCViewer/>
 </template>
 
 <script lang="ts" setup>

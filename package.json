@@ -13,17 +13,22 @@
     "@mdi/font": "^7.4.47",
     "@pinia/nuxt": "^0.5.1",
     "@types/three": "^0.163.0",
+    "dxf-writer": "^1.18.4",
     "nuxt": "^3.11.2",
+    "openbim-components": "^1.5.0",
     "opencascade.js": "2.0.0-beta.b5ff984",
     "pinia": "^2.1.7",
-    "three": "^0.163.0",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
-  "packageManager": "pnpm@8.15.7+sha1.44793e979f677db082fa49826446aad5aa4ee6b8",
   "devDependencies": {
     "@types/node": "^20.12.7",
     "vite-plugin-vuetify": "^2.0.3",
     "vuetify": "^3.5.16"
+  },
+  "peerDependencies": {
+    "bim-fragment": "^1.5.0",
+    "three": "^0.160.1",
+    "web-ifc": "^0.0.53"
   }
 }

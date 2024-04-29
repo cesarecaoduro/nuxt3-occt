@@ -1,17 +1,16 @@
 <template>
-    <canvas id="mountId" width="700" height="500" />
+    <canvas id="obcMountId" />
 </template>
 
 <script setup lang="ts">
 
 const { initOBC } = await useOpenBIMComponents();
-const canvas = computed(() => document.getElementById('mountId') as HTMLCanvasElement);
+const canvas = computed(() => document.getElementById('obcMountId') as HTMLCanvasElement);
 
 async function setupScene() {
-  const {viewer, scene} = await initOBC('mountId');
   const { components } = storeToRefs(useGlobalStore());
-  components.value = viewer
-  console.log(scene);
+  await initOBC(canvas.value.id);
+
 }
 
 onMounted(async () => {

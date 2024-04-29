@@ -1,5 +1,5 @@
-import { Components } from "openbim-components";
-import { Scene } from "three";
+import { type Components } from "openbim-components";
+import { type Scene } from "three";
 import { type OpenCascadeInstance } from "~/opencascade/occt";
 
 export const useGlobalStore = defineStore('global', () => {
@@ -13,7 +13,9 @@ export const useGlobalStore = defineStore('global', () => {
   // actions
 
   return {
-    occt, threeScene, components
+    occt, 
+    threeScene, 
+    components
   };
 });
 

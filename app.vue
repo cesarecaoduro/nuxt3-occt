@@ -1,10 +1,9 @@
 <template>
-  <VApp id="inspire">
-    <div v-if="loading">Loading OpenCascadeInstance...</div>
-    <div v-else>
-      <NuxtPage />
-    </div>
-  </VApp>
+  <div v-if="loading">Loading OpenCascadeInstance...</div>
+  <div v-else>
+    <GeometryKernel/>
+    <!-- <OBCViewer /> -->
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,9 +21,10 @@ onMounted(async () => {
   const geometryUtils = new GeometryUtils(occt.value);
   loading.value = false;
 });
+
 </script>
 
-<style scoped>
+<style>
 html,
 body {
   overflow: hidden;
@@ -35,10 +35,11 @@ body {
   padding: 0;
 }
 
-.mountId {
-  position: fixed;
+#obcMountId {
   top: 0;
   left: 0;
   outline: none;
+  height: 100vh;
+  background-color: aqua;
 }
 </style>

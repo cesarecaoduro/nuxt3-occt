@@ -11,17 +11,21 @@
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
-    "@nuxt/ui-pro": "^1.1.0",
+    "@nuxtjs/tailwindcss": "^6.12.0",
     "@pinia/nuxt": "^0.5.1",
     "@types/three": "^0.163.0",
+    "golden-layout": "^2.6.0",
     "nuxt": "^3.11.2",
+    "nuxt-monaco-editor": "^1.2.9",
     "openbim-components": "^1.5.0",
-    "opencascade.js": "2.0.0-beta.b5ff984",
     "pinia": "^2.1.7",
+    "tslib": "^2.6.2",
+    "tweakpane": "^4.0.3",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@tweakpane/core": "^2.0.3",
     "@types/node": "^20.12.7",
     "vite-plugin-vuetify": "^2.0.3"
   },

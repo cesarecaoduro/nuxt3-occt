@@ -1,8 +1,10 @@
 <template>
   <div v-if="loading">Loading OpenCascadeInstance...</div>
   <div v-else>
-    <GeometryKernel/>
-    <!-- <OBCViewer /> -->
+    <!-- <MonacoEditor id='layoutContainer' v-model="value" lang="typescript"/> -->
+    <!-- <Layout /> -->
+    <!-- <GeometryKernel /> -->
+    <OBCViewer />
   </div>
 </template>
 
@@ -10,6 +12,7 @@
 // Initialize OpenCascade Kernel
 const { InitiOC } = await useOpenCascade();
 const loading = ref(true);
+const value = ref('')
 
 async function LoadOC() {
   return await InitiOC();
@@ -35,7 +38,7 @@ body {
   padding: 0;
 }
 
-#obcMountId {
+#obcMountId, #layoutContainer {
   top: 0;
   left: 0;
   outline: none;

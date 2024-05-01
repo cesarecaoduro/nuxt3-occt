@@ -13,7 +13,7 @@ export async function useOpenBIMComponents() {
         const scene = new OBC.SimpleScene(cmpts);
         cmpts.scene = scene;
         
-        const viewerContainer = document.getElementById(appId) as HTMLCanvasElement;
+        const viewerContainer = document.getElementById(appId) as HTMLDivElement;
         const rendererComponent = new OBC.PostproductionRenderer(cmpts, viewerContainer);
         const postproduction = rendererComponent.postproduction;
         cmpts.renderer = rendererComponent;

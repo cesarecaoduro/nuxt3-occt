@@ -1,20 +1,22 @@
 <template>
-    <canvas id="obcMountId" />
+  <div id="obcMountId">
+  </div>
 </template>
 
 <script setup lang="ts">
 
 const { initOBC } = await useOpenBIMComponents();
-const canvas = computed(() => document.getElementById('obcMountId') as HTMLCanvasElement);
+const container = computed(() => document.getElementById('obcMountId') as HTMLDivElement);
 
 async function setupScene() {
   const { components } = storeToRefs(useGlobalStore());
-  await initOBC(canvas.value.id);
+  await initOBC(container.value.id);
 
 }
 
 onMounted(async () => {
-  if (canvas.value) {
+  // await nextTick();
+  if (container.value) {
     await setupScene();
   }
 });

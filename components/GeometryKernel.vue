@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { BoxGeometry, BufferGeometry, Float32BufferAttribute, MeshLambertMaterial, PerspectiveCamera, Points, PointsMaterial, Scene, WebGLRenderer } from "three";
 import { color, materialAlphaTest } from "three/examples/jsm/nodes/Nodes.js";
-import { useThree } from "~/composables/useThree";
 import type { OpenCascadeInstance } from "~/opencascade/occt";
+import { Pane } from 'tweakpane';
 
 let _scene: Scene;
 let _camera: PerspectiveCamera;
@@ -18,7 +18,7 @@ const canvas = computed(() => document.getElementById('mountId') as HTMLCanvasEl
 
 const geometryUtils = new GeometryUtils(oc);
 
-function testScene() {
+function testScene(): number {
 
   // define a point with OCC and draw using Threejs
   var pt1 = new oc.gp_Pnt_3(0, 0, 0);
@@ -51,6 +51,7 @@ function testScene() {
   var adaptor = new oc.BRepAdaptor_CompCurve_2(wireBuilder.Wire(), false);
   var length = oc.GCPnts_AbscissaPoint.Length_1(adaptor);
   console.log(`Curve length: ${length}`);
+  return length;
 }
 
 function renderLoop() {
@@ -66,11 +67,22 @@ function setupScene() {
   _scene = scene;
   _camera = camera;
   _renderer = renderer;
-  
-  testScene();
+
+  var l = testScene();
 
   // start the renderLoop
   _renderLoopId = requestAnimationFrame(renderLoop);
+
+  const PARAMS = {
+    length: l/2,
+  };
+
+  const pane = new Pane();
+  pane.title = 'Inputs';
+  pane.addBinding(PARAMS, 'length', {
+    min: 0,
+    max: l
+  });
 
 }
 

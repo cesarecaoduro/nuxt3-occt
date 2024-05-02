@@ -1,10 +1,10 @@
 <template>
   <div v-if="loading">Loading OpenCascadeInstance...</div>
   <div v-else>
+    <OBCViewer />
     <!-- <MonacoEditor id='layoutContainer' v-model="value" lang="typescript"/> -->
     <!-- <Layout /> -->
     <!-- <GeometryKernel /> -->
-    <OBCViewer />
   </div>
 </template>
 

@@ -10,7 +10,7 @@ let _renderer: WebGLRenderer;
 let _renderLoopId: number;
 
 // const store = useGlobalStore();
-const { occt, threeScene } = storeToRefs(useGlobalStore());
+const { occt } = storeToRefs(useGlobalStore());
 const oc = occt.value as OpenCascadeInstance;
 
 const { initThree, addPoint, addSegment } = useThree();
